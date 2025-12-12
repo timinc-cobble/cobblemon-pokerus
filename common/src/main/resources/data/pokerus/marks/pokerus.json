@@ -1,0 +1,10 @@
+{
+  "name": "pokerus.mark.pokerus",
+  "title": "pokerus.mark.pokerus.title",
+  "titleColor": "FFFFFF",
+  "description": "pokerus.mark.pokerus.desc",
+  "texture": "pokerus:textures/gui/mark/pokerus.png",
+  "replace": [
+    "pokerus:pokerus_cured"
+  ]
+}
