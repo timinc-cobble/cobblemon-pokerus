@@ -5,14 +5,13 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.pokemon.Pokemon
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
-import us.timinc.mc.cobblemon.pokerus.extension.hasPokerus
 import us.timinc.mc.cobblemon.pokerus.handler.PokerusCureHandler
 import us.timinc.mc.cobblemon.pokerus.handler.PokerusEvBoost
 import us.timinc.mc.cobblemon.pokerus.handler.PokerusSpreadHandler
 import us.timinc.mc.cobblemon.timcore.AbstractConfig
 import us.timinc.mc.cobblemon.timcore.AbstractMod
-import us.timinc.mc.cobblemon.timcore.CustomBooleanProperty
 import us.timinc.mc.cobblemon.timcore.CustomFloatProperty
+import us.timinc.mc.cobblemon.timcore.CustomMarkBooleanProperty
 
 const val MOD_ID: String = "pokerus"
 
@@ -51,8 +50,9 @@ object Pokerus : AbstractMod<Pokerus.PokerusConfig>(MOD_ID, PokerusConfig::class
     }
 
     object PokemonProperties {
-        val POKERUS = CustomBooleanProperty(DataKeys.PokemonProperties.POKERUS.toString())
-        val HAD_POKERUS = CustomBooleanProperty(DataKeys.PokemonProperties.HAD_POKERUS.toString())
+        val POKERUS = CustomMarkBooleanProperty(DataKeys.PokemonProperties.POKERUS.toString(), DataKeys.Marks.POKERUS)
+        val HAD_POKERUS =
+            CustomMarkBooleanProperty(DataKeys.PokemonProperties.HAD_POKERUS.toString(), DataKeys.Marks.POKERUS_CURED)
         val POKERUS_X = CustomFloatProperty(DataKeys.PokemonProperties.POKERUS_X.toString())
         val POKERUS_Y = CustomFloatProperty(DataKeys.PokemonProperties.POKERUS_Y.toString())
         val LAST_CHECKED_DAY = CustomFloatProperty(DataKeys.PokemonProperties.LAST_CHECKED_DAY.toString())
