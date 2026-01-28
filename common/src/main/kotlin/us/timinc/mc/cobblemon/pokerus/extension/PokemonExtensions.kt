@@ -24,8 +24,8 @@ fun Pokemon.infectWithPokerus(spreadFrom: Pair<Int, Int>? = null) {
     val x = spreadFrom?.let { (x, _) -> x } ?: Random.nextInt(1, 16)
     val y = spreadFrom?.let { (_, y) -> y } ?: ((x and 0x03) + 1)
 
-    POKERUS_X.pokemonApplicator(this, x.toFloat())
-    POKERUS_Y.pokemonApplicator(this, y.toFloat())
+    POKERUS_X.pokemonApplicator(this, x)
+    POKERUS_Y.pokemonApplicator(this, y)
     this.updateAspects()
 
     getOwnerPlayer()?.sendSystemMessage(Pokerus.Chat.pokerusGained(this))
@@ -37,8 +37,8 @@ fun Pokemon.neverHadPokerus() = !hasPokerus() && !hadPokerus()
 fun Pokemon.hasEverHadPokerus() = hasPokerus() || hadPokerus()
 
 fun Pokemon.getPokerus(): Pair<Int, Int>? {
-    val x = POKERUS_X.getValue(this)?.toInt() ?: if (hasPokerus()) Random.nextInt(1, 16) else return null
-    val y = POKERUS_Y.getValue(this)?.toInt() ?: if (hasPokerus()) ((x and 0x03) + 1) else return null
+    val x = POKERUS_X.getValue(this) ?: if (hasPokerus()) Random.nextInt(1, 16) else return null
+    val y = POKERUS_Y.getValue(this) ?: if (hasPokerus()) ((x and 0x03) + 1) else return null
 
     return x to y
 }
@@ -61,5 +61,5 @@ fun Pokemon.tickPokerus() {
         curePokerus()
         return
     }
-    POKERUS_Y.pokemonApplicator(this, y - 1F)
+    POKERUS_Y.pokemonApplicator(this, y - 1)
 }
