@@ -60,7 +60,7 @@ object PokerusManager {
             val currentPlayTime =
                 pokemon.getOwnerPlayer()?.stats?.getValue(Stats.CUSTOM.get(Stats.PLAY_TIME)) ?: continue
             val currentPlayDay = floor(currentPlayTime / 2400.0).toInt() + 1
-            LAST_CHECKED_DAY.pokemonApplicator(pokemon, currentPlayDay.toFloat())
+            LAST_CHECKED_DAY.pokemonApplicator(pokemon, currentPlayDay)
             if (lastCheckedDay === null || currentPlayDay <= lastCheckedDay) {
                 continue
             }
