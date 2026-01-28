@@ -1,6 +1,6 @@
 # Pokerus
 
-v1.7.1-1.0
+v1.7.2-1.0
 
 [Modrinth](https://modrinth.com/mod/cobblemon-pokerus)
 
@@ -46,19 +46,19 @@ After (at max) four in-game days of battling with a Pokémon that has contracted
 
 ## Player Help
 
-[Config Options](https://www.notion.so/Config-Options-2c757e0d4afd80fcb68bd50e6c6f3cab?pvs=21)
+[Config Options](https://www.notion.so/Config-Options-2f657e0d4afd815f81d7d01f531d2d7a?pvs=21)
 
 ## Addon Dev Help
 
 ### Data Pack Help
 
-[Pokémon Custom Properties](https://www.notion.so/Pok-mon-Custom-Properties-2c757e0d4afd80d28713e73378245ed9?pvs=21)
+[Pokémon Custom Properties](https://www.notion.so/Pok-mon-Custom-Properties-2f657e0d4afd8139b420c94636d2939e?pvs=21)
 
 ### Resource Pack Help
 
-[Translations](https://www.notion.so/Translations-2c757e0d4afd80cda745cf01ec2ada9e?pvs=21)
+[Translations](https://www.notion.so/Translations-2f657e0d4afd818bac5cc9657468e884?pvs=21)
 
-[Resources](https://www.notion.so/Resources-2c757e0d4afd803cac8ac001886c6425?pvs=21)
+[Resources](https://www.notion.so/Resources-2f657e0d4afd814ab210e38eb94c214a?pvs=21)
 
 ## Known Issues
 
