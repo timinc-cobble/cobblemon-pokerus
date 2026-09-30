@@ -50,15 +50,30 @@ object Pokerus : AbstractMod<Pokerus.PokerusConfig>(MOD_ID, PokerusConfig::class
     }
 
     object PokemonProperties {
-        val POKERUS = CustomMarkBooleanProperty(DataKeys.PokemonProperties.POKERUS.toString(), DataKeys.Marks.POKERUS)
+        val POKERUS = registerCustomPokemonProperty(
+            CustomMarkBooleanProperty(
+                DataKeys.PokemonProperties.POKERUS.toString(),
+                DataKeys.Marks.POKERUS
+            )
+        )
         val HAD_POKERUS =
-            CustomMarkBooleanProperty(DataKeys.PokemonProperties.HAD_POKERUS.toString(), DataKeys.Marks.POKERUS_CURED)
-        val POKERUS_X = CustomIntProperty(DataKeys.PokemonProperties.POKERUS_X.toString())
-        val POKERUS_Y = CustomIntProperty(DataKeys.PokemonProperties.POKERUS_Y.toString())
-        val LAST_CHECKED_DAY = CustomIntProperty(DataKeys.PokemonProperties.LAST_CHECKED_DAY.toString())
+            registerCustomPokemonProperty(
+                CustomMarkBooleanProperty(
+                    DataKeys.PokemonProperties.HAD_POKERUS.toString(),
+                    DataKeys.Marks.POKERUS_CURED
+                )
+            )
+        val POKERUS_X =
+            registerCustomPokemonProperty(CustomIntProperty(DataKeys.PokemonProperties.POKERUS_X.toString()))
+        val POKERUS_Y =
+            registerCustomPokemonProperty(CustomIntProperty(DataKeys.PokemonProperties.POKERUS_Y.toString()))
+        val LAST_CHECKED_DAY =
+            registerCustomPokemonProperty(CustomIntProperty(DataKeys.PokemonProperties.LAST_CHECKED_DAY.toString()))
     }
 
     init {
+        PokemonProperties
+
         CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.LOWEST, PokerusSpreadHandler::handle)
         CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.LOWEST, PokerusCureHandler::handle)
         CobblemonEvents.EV_GAINED_EVENT_PRE.subscribe(Priority.LOWEST, PokerusEvBoost::handle)
